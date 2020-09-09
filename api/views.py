@@ -21,8 +21,6 @@ def participant_list(request):
         if email is not None:
             participant = participant.filter(email)
         data = participant.values_list('name')
-        #name = data[0][0]
-        #print(name)
         participant_serializer = ParticipantSerializer(participant, many=True)
         return JsonResponse(participant_serializer.data, safe=False)
 
@@ -44,9 +42,9 @@ def certificate(request, email):
         return JsonResponse({'message': 'The participant does not exist'}, status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        gen_certificate(participant.name)
+        gen_certificate(participant.name, participant.id)
         fs = FileSystemStorage()
-        with fs.open('certificate.pdf') as pdf:
-           response = HttpResponse(pdf, content_type='application/pdf')
+        with fs.open('certificate'+str(participant.id)+'.pdf') as pdf:
+            response = HttpResponse(pdf, content_type='application/pdf')
         return response
 
