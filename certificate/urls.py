@@ -1,5 +1,3 @@
-
-
 from django.conf.urls import url
 from api import views
 from django.urls import path
