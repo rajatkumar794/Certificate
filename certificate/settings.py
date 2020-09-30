@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'api.apps.TutorialsConfig',
     'corsheaders',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -123,7 +124,14 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:8081',
 )
 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500) DATABASES['default'].update(db_from_env)
