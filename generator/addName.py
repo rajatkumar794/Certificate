@@ -1,5 +1,4 @@
 from PIL import ImageFont, ImageDraw, Image
-import matplotlib.pyplot as plt
 fontColour = (70, 121, 189)
 fontSize = 40
 
