@@ -52,7 +52,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'whitenoise.storage.CompressedManifestStaticFilesStorage',
 ]
 
 ROOT_URLCONF = 'certificate.urls'
