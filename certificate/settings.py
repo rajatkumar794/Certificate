@@ -25,7 +25,7 @@ SECRET_KEY = '71je#5w6yls*^f5asx%p)9hvtyz3g49z+(8@scw*)zoce=l!z$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://gen-certificate.herokuapp.com/']
 
 
 # Application definition
