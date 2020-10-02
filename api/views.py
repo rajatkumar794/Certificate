@@ -44,7 +44,7 @@ def certificate(request, email):
     if request.method == 'GET':
         gen_certificate(participant.name)
         fs = FileSystemStorage()
-        with fs.open('certificate'+str(participant.id)+'.pdf') as pdf:
+        with fs.open('certificate.pdf') as pdf:
             response = HttpResponse(pdf, content_type='application/pdf')
         return response
 
