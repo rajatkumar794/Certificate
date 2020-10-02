@@ -42,7 +42,7 @@ def certificate(request, email):
         return JsonResponse({'message': 'The participant does not exist'}, status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        gen_certificate(participant.name, participant.id)
+        gen_certificate(participant.name)
         fs = FileSystemStorage()
         with fs.open('certificate'+str(participant.id)+'.pdf') as pdf:
             response = HttpResponse(pdf, content_type='application/pdf')

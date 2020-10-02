@@ -5,7 +5,7 @@ fontSize = 40
 font = ImageFont.truetype('generator/fonts/roman.ttf', fontSize)
 
 
-def gen_certificate(name, id):
+def gen_certificate(name):
 	xCoordinate = 780
 	yCoordinate = 425
 	template = 'templates/template.jpg'
@@ -13,4 +13,4 @@ def gen_certificate(name, id):
 	draw = ImageDraw.Draw(img)
 	draw.text((xCoordinate, yCoordinate), name, font=font, fill=fontColour)
 	img = img.convert('RGB')
-	img.save(f"certificate"+str(id)+".pdf")
+	img.save(f"certificate.pdf")
